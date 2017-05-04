@@ -19,7 +19,6 @@ import static com.acev.moovies.Config.SPLASH_SCREEN_DELAY;
 
 public class SplashScreen extends Activity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
