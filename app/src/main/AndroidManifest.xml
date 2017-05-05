@@ -20,11 +20,11 @@
         </activity>
 
         <!-- Activity principal -->
-        <activity android:name=".ActivityMain" />
         <activity
             android:name=".AcMain"
             android:label="@string/title_activity_ac_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

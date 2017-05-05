@@ -21,7 +21,7 @@ public class FrPopulares extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_populares, container, false);
+        View root = inflater.inflate(R.layout.fr_populares, container, false);
         return root;
     }
 
