@@ -14,8 +14,8 @@ import android.view.ViewGroup;
  * Created by Daniel on 05/05/2017.
  */
 
-public class FragmentPopulares extends Fragment {
-    public FragmentPopulares() {
+public class FrPopulares extends Fragment {
+    public FrPopulares() {
     }
 
     @Override

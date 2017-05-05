@@ -34,7 +34,7 @@ public class ActivityMain extends AppCompatActivity {
 
         // Seleccionar como contenido el Fragment del listado de notas
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content, new FragmentPopulares())
+                .replace(R.id.content, new FrPopulares())
                 .addToBackStack("FrPopulares")
                 .commit();
     }

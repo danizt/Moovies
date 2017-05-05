@@ -6,4 +6,15 @@
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="dialog_exit_message">¿Estás seguro de que quieres salir?</string>
+
+
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+
+    <string name="populares">Populares</string>
+    <string name="compartir">Compartir</string>
+    <string name="contactar">Contactar</string>
+    <string name="title_activity_ac_main">AcMain</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
