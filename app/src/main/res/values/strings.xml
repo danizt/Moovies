@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Moovies</string>
+    <string name="app_slogan">Consulta tus películas favoritas</string>
+    <!-- TODO: Mejorar eslogan -->
 
     <string name="inicio">Inicio</string>
 
