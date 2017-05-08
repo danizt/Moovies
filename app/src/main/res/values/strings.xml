@@ -21,6 +21,18 @@
     <string name="contactar">Contactar</string>
     <string name="valorar">Valorar</string>
 
+    <string name="enviar">Enviar</string>
+    <string name="email">Email de contacto</string>
+    <string name="asunto">Asunto</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="dialog_exit_dialog_message">¿Estás seguro de que quieres salir? Se perderá todo el progreso</string>
+    <string name="mensaje_enviado">Mensaje enviado</string>
+    <string name="e_mensaje_blanco">E: El mensaje no puede estar en blanco</string>
+    <string name="e_asunto_blanco">E: El asunto no puede estar en blanco</string>
+    <string name="e_email_blanco">E: El email no puede estar en blanco</string>
+    <string name="e_email_formato">E: El email no tiene un formato correcto</string>
+    <string name="dialog_enviar_message">¿Desea enviar este mensaje?</string>
 
     <string name="title_activity_ac_main">AcMain</string>
 

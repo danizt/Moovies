@@ -102,7 +102,7 @@ public class AcMain extends AppCompatActivity
         else if (id == R.id.nav_compartir) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (compartir)", Snackbar.LENGTH_LONG).show();
         } else if (id == R.id.nav_contactar) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (contactar)", Snackbar.LENGTH_LONG).show();
+            new FrContacto().show(getSupportFragmentManager(), "Contacto");
         } else if (id == R.id.nav_valorar) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
         }
@@ -115,7 +115,7 @@ public class AcMain extends AppCompatActivity
     public void cambiarFragment(android.support.v4.app.Fragment nuevoFragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content, nuevoFragment)
-                .addToBackStack("FrPopulares")
+                .addToBackStack(null)
                 .commit();
     }
 }
