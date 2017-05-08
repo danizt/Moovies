@@ -1,5 +1,6 @@
 package com.acev.moovies;
 
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -47,9 +48,9 @@ public class AcMain extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            if (getFragmentManager().getBackStackEntryCount() > 0){
+            if (getFragmentManager().getBackStackEntryCount() > 0) {
                 getFragmentManager().popBackStack();
-            }else{
+            } else {
                 // Diálogo de confirmación para salir de la aplicación
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 // Añadir los botones
@@ -81,27 +82,40 @@ public class AcMain extends AppCompatActivity
         // Click en los elementos del menú
         int id = item.getItemId();
 
+        // TODO: Animaciones de transición
+//        .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,
+//                R.anim.enter_from_left, R.anim.exit_to_right)
+
+
         if (id == R.id.nav_populares) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (populares)", Snackbar.LENGTH_LONG).show();
+            cambiarFragment(new FrPopulares());
         }
         else if (id == R.id.nav_aleatoria) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();
+            cambiarFragment(new FrAleatoria());
         }
         else if (id == R.id.nav_buscador) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (buscador)", Snackbar.LENGTH_LONG).show();
+            cambiarFragment( new FrBuscador());
         }
         else if (id == R.id.nav_compartir) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (compartir)", Snackbar.LENGTH_LONG).show();
-        }
-        else if (id == R.id.nav_contactar) {
+        } else if (id == R.id.nav_contactar) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (contactar)", Snackbar.LENGTH_LONG).show();
-        }
-        else if (id == R.id.nav_valorar) {
+        } else if (id == R.id.nav_valorar) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void cambiarFragment(android.support.v4.app.Fragment nuevoFragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content, nuevoFragment)
+                .addToBackStack("FrPopulares")
+                .commit();
     }
 }
