@@ -30,6 +30,9 @@ public class AcMain extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        // Mostrar colores originales de los iconos del menú lateral
+        navigationView.setItemIconTintList(null);
+
 
         // Seleccionar como contenido el Fragment del listado de notas
         getSupportFragmentManager().beginTransaction()
@@ -75,21 +78,26 @@ public class AcMain extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Click en los elementos del menú
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_gallery) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_slideshow) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_manage) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_share) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_send) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción", Snackbar.LENGTH_LONG).show();
+        if (id == R.id.nav_populares) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (populares)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_aleatoria) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_buscador) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (buscador)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_compartir) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (compartir)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_contactar) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (contactar)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_valorar) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
