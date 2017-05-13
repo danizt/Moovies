@@ -11,11 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 /**
  * Created by Daniel on 05/05/2017.
  */
 
 public class FrPopulares extends Fragment {
+
+    // Array con el listado de películas a mostrar
+    private ArrayList<MovGen> listaPopulares = new ArrayList<>();
+
     public FrPopulares() {
     }
 
@@ -30,7 +36,11 @@ public class FrPopulares extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Título de la toolbar
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.populares));
+
+
+
     }
 }
