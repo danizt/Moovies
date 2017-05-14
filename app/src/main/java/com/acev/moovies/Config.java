@@ -1,5 +1,7 @@
 package com.acev.moovies;
 
+import java.util.ArrayList;
+
 /**
  * Created by Dani on 04/05/2017.
  */
@@ -24,4 +26,18 @@ public class Config {
     // Formato del mensaje
     public static final String CONTACT_TEXT= "Asunto: <ASUNTO>\nEmail: <EMAIL>\n\nMensaje:\n<MESSAGE>";
 
+    // Llamada al API de themoviedb para obtener peliculas populares
+    public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=es";
+
+    // Array con el listado de películas a mostrar
+    public static ArrayList<MovGen> listaPopulares = new ArrayList<>();
+
+
+    // TAGs listado de películas
+    public static final String TAG_ID = "id";
+    public static final String TAG_TITLE = "title";
+    public static final String TAG_RELEASE_DATE = "release_date";
+    public static final String TAG_POSTER = "poster_path";
+    public static final String TAG_BACKDROP = "backdrop_path";
+    public static final String TAG_AVERAGE = "vote_average";
 }
