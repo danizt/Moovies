@@ -29,6 +29,9 @@ public class Config {
     // Llamada al API de themoviedb para obtener peliculas populares
     public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=es";
 
+    // Ruta para obtener las imágenes del API
+    public static final String API_POSTER_URL = "https://image.tmdb.org/t/p/w640<IMG_PATH>";
+
     // Array con el listado de películas a mostrar
     public static ArrayList<MovGen> listaPopulares = new ArrayList<>();
 

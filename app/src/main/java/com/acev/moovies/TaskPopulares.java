@@ -3,13 +3,11 @@ package com.acev.moovies;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.SystemClock;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import okhttp3.OkHttpClient;
@@ -18,15 +16,12 @@ import okhttp3.Response;
 
 import static com.acev.moovies.Config.API_KEY;
 import static com.acev.moovies.Config.API_URL_GET_POPULARES;
-import static com.acev.moovies.Config.API_URL_SEND_TEXT;
-import static com.acev.moovies.Config.MI_CID;
 import static com.acev.moovies.Config.TAG_AVERAGE;
 import static com.acev.moovies.Config.TAG_BACKDROP;
 import static com.acev.moovies.Config.TAG_ID;
 import static com.acev.moovies.Config.TAG_POSTER;
 import static com.acev.moovies.Config.TAG_RELEASE_DATE;
 import static com.acev.moovies.Config.TAG_TITLE;
-import static com.acev.moovies.Config.TOKEN;
 import static com.acev.moovies.Config.listaPopulares;
 
 /**
