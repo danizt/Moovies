@@ -35,6 +35,49 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivStar"
+                android:layout_alignTop="@+id/ivStar"
+                android:layout_marginRight="6dp"
+                android:layout_toLeftOf="@+id/ivStar"
+                android:gravity="center_vertical"
+                android:text="0.0" />
+
+            <ImageView
+                android:id="@+id/ivStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_star_border_black_24dp"
+                android:layout_alignBottom="@+id/ivPoster"
+                android:layout_alignRight="@+id/tvTitle"
+                android:layout_alignEnd="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvEstreno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tvAverage"
+                android:layout_alignBottom="@+id/tvAverage"
+                android:layout_alignLeft="@+id/tvTitle"
+                android:layout_alignStart="@+id/tvTitle"
+                android:text="@string/estreno"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRelease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tvEstreno"
+                android:layout_alignBottom="@+id/tvEstreno"
+                android:layout_marginLeft="6dp"
+                android:layout_toEndOf="@+id/tvEstreno"
+                android:layout_toRightOf="@+id/tvEstreno"
+                android:text="01/01/1970" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -62,11 +62,14 @@ public class AdaptadorLista extends BaseAdapter {
         String release_date = item.getRelease_date();
         String title = item.getTitle();
 
-        // TODO: Rellenar datos del layout
         ImageView ivPoster = (ImageView) rowView.findViewById(R.id.ivPoster);
         TextView tvTitle = (TextView) rowView.findViewById(R.id.tvTitle);
+        TextView tvAverage = (TextView) rowView.findViewById(R.id.tvAverage);
+        TextView tvRelease = (TextView) rowView.findViewById(R.id.tvRelease);
 
         tvTitle.setText(title);
+        tvRelease.setText(release_date);
+        tvAverage.setText(String.format("%1$,.1f", Double.parseDouble(average)));
         Picasso.with(context).load(API_POSTER_URL.replace("<IMG_PATH>", poster)).into(ivPoster);
 
 

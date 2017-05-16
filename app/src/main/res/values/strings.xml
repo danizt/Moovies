@@ -42,4 +42,5 @@
     <string name="loading">Cargando</string>
 
     <string name="e_obtener_datos">E: Error al obtener los datos</string>
+    <string name="estreno">Estreno:</string>
 </resources>
