@@ -1,6 +1,5 @@
 package com.acev.moovies;
 
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -13,12 +12,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.sylversky.fontreplacer.FontReplacer;
+import com.sylversky.fontreplacer.Replacer;
+
+
 public class AcMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Cambiar fuente
+        Replacer replacer = FontReplacer.Build(getApplicationContext());
+        replacer.setDefaultFont("fonts/ProductSans-Regular.ttf");
+        replacer.setBoldFont("fonts/ProductSans-Bold.ttf");
+        replacer.setBoldItalicFont("fonts/ProductSans-Bold-Italic.ttf");
+        replacer.setItalicFont("fonts/ProductSans-Italic.ttf");
+        replacer.applyFont();
+
         setContentView(R.layout.ac_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

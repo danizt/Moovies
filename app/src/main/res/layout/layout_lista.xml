@@ -5,10 +5,10 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:id="@+id/cardView2">
+        android:layout_margin="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,13 +28,13 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/ivPoster"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_toRightOf="@+id/ivPoster"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="placeholder"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvAverage"
@@ -51,10 +51,10 @@
                 android:id="@+id/ivStar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_star_border_black_24dp"
                 android:layout_alignBottom="@+id/ivPoster"
+                android:layout_alignEnd="@+id/tvTitle"
                 android:layout_alignRight="@+id/tvTitle"
-                android:layout_alignEnd="@+id/tvTitle" />
+                app:srcCompat="@drawable/ic_star_border_black_24dp" />
 
             <TextView
                 android:id="@+id/tvEstreno"
