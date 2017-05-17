@@ -2,12 +2,16 @@ package com.acev.moovies;
 
 import android.content.Context;
 import android.media.Image;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -55,12 +59,12 @@ public class AdaptadorLista extends BaseAdapter {
 
         // Obtener datos a insertar
         final MovGen item = this.items.get(position);
-        String id = item.getId();
-        String average = item.getAverage();
-        String backdrop = item.getBackdrop();
-        String poster = item.getPoster();
-        String release_date = item.getRelease_date();
-        String title = item.getTitle();
+        final String id = item.getId();
+        final String average = item.getAverage();
+        final String backdrop = item.getBackdrop();
+        final String poster = item.getPoster();
+        final String release_date = item.getRelease_date();
+        final String title = item.getTitle();
 
         ImageView ivPoster = (ImageView) rowView.findViewById(R.id.ivPoster);
         TextView tvTitle = (TextView) rowView.findViewById(R.id.tvTitle);
@@ -74,7 +78,15 @@ public class AdaptadorLista extends BaseAdapter {
 
 
         // TODO: OnClickListener -> Detalle
-
+        // Abrir vista detalle de cada película
+        RelativeLayout rlElemento = (RelativeLayout) rowView.findViewById(R.id.rlElemento);
+        final View finalRowView = rowView;
+        rlElemento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(finalRowView, "Click en: " + id + " (" + title + ")", Snackbar.LENGTH_LONG).show();
+            }
+        });
 
         return rowView;
     }

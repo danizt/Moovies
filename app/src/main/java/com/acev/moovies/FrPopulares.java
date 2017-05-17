@@ -24,6 +24,7 @@ import static com.acev.moovies.Config.listaPopulares;
 
 public class FrPopulares extends Fragment {
     AdaptadorLista adaptador;
+    ListView lvPopulares;
 
     public FrPopulares() {
     }
@@ -34,8 +35,6 @@ public class FrPopulares extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fr_populares, container, false);
 
-        // Obtener los datos del API
-        obtenerDatos();
         return root;
     }
 
@@ -45,6 +44,13 @@ public class FrPopulares extends Fragment {
         // Título de la toolbar
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.populares));
+
+        // Obtener los datos del API
+        if (listaPopulares == null || listaPopulares.isEmpty()){
+            obtenerDatos();
+        } else{
+            crearLista();
+        }
     }
 
     // Obtener datos del API
@@ -65,7 +71,7 @@ public class FrPopulares extends Fragment {
     }
     // Generar la interfaz del listView
     private void crearLista(){
-        ListView lvPopulares = (ListView) getView().findViewById(R.id.listaPopulares);
+        lvPopulares = (ListView) getView().findViewById(R.id.listaPopulares);
         adaptador = new AdaptadorLista(getContext(), listaPopulares);
         lvPopulares.setAdapter(adaptador);
     }
