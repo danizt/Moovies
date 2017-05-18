@@ -15,7 +15,10 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.acev.moovies.Config.API_POSTER_URL;
@@ -71,8 +74,16 @@ public class AdaptadorLista extends BaseAdapter {
         TextView tvAverage = (TextView) rowView.findViewById(R.id.tvAverage);
         TextView tvRelease = (TextView) rowView.findViewById(R.id.tvRelease);
 
+        String formattedDate = null;
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(release_date);
+            formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         tvTitle.setText(title);
-        tvRelease.setText(release_date);
+        tvRelease.setText(formattedDate);
         tvAverage.setText(String.format("%1$,.1f", Double.parseDouble(average)));
         Picasso.with(context).load(API_POSTER_URL.replace("<IMG_PATH>", poster)).into(ivPoster);
 
