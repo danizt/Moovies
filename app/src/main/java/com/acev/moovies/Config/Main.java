@@ -31,6 +31,9 @@ public class Main {
     // Llamada al API de themoviedb para obtener peliculas populares
     public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=es";
 
+    // Llamada al API de themoviedb para obtener detalles de una palícula
+    public static final String API_URL_GET_DETALLES = "http://api.themoviedb.org/3/movie/<ID>?append_to_response=videos&api_key=<KEY>&language=es";
+
     // Ruta para obtener las imágenes del API
     public static final String API_POSTER_URL = "https://image.tmdb.org/t/p/w640<IMG_PATH>";
 
