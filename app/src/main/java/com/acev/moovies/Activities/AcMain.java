@@ -55,7 +55,6 @@ public class AcMain extends AppCompatActivity
         // Seleccionar como contenido el Fragment del listado de notas
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content, new FrPopulares())
-                .addToBackStack("FrPopulares")
                 .commit();
     }
 
@@ -65,30 +64,23 @@ public class AcMain extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            if (getFragmentManager().getBackStackEntryCount() > 0) {
-                getFragmentManager().popBackStack();
+            if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                getSupportFragmentManager().popBackStack();
             } else {
                 // Diálogo de confirmación para salir de la aplicación
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                // Añadir los botones
-                builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Diálogo aceptado
-                        finish();
-                    }
-                });
-                builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Diálogo cancelado
-                    }
-                });
-
-                // Propiedades del diálogo
-                builder.setMessage(R.string.dialog_exit_message);
-
-                // Mostrar diálogo
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                new AlertDialog.Builder(this)
+                    // Añadir los botones
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Diálogo aceptado
+                            finish();
+                        }
+                    })
+                    .setNegativeButton(R.string.no, null)
+                    // Propiedades del diálogo
+                    .setMessage(R.string.dialog_exit_message)
+                    // Mostrar diálogo
+                    .show();
             }
         }
     }
@@ -98,11 +90,6 @@ public class AcMain extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Click en los elementos del menú
         int id = item.getItemId();
-
-        // TODO: Animaciones de transición
-//        .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,
-//                R.anim.enter_from_left, R.anim.exit_to_right)
-
 
         if (id == R.id.nav_populares) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (populares)", Snackbar.LENGTH_LONG).show();
@@ -130,9 +117,12 @@ public class AcMain extends AppCompatActivity
     }
 
     public void cambiarFragment(android.support.v4.app.Fragment nuevoFragment) {
-        getSupportFragmentManager().beginTransaction()
+        // TODO: Animaciones entre fragments
+//        .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,
+//                R.anim.enter_from_left, R.anim.exit_to_right)
+        getSupportFragmentManager()
+                .beginTransaction()
                 .replace(R.id.content, nuevoFragment)
-                .addToBackStack(null)
                 .commit();
     }
 }

@@ -1,7 +1,9 @@
 package com.acev.moovies.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.acev.moovies.Fragments.FrDetalle;
 import com.acev.moovies.Objects.Movies;
 import com.acev.moovies.R;
 import com.squareup.picasso.Picasso;
@@ -87,14 +90,21 @@ public class AdaptadorLista extends BaseAdapter {
         Picasso.with(context).load(API_POSTER_URL.replace("<IMG_PATH>", poster)).into(ivPoster);
 
 
-        // TODO: OnClickListener -> Detalle
         // Abrir vista detalle de cada película
         RelativeLayout rlElemento = (RelativeLayout) rowView.findViewById(R.id.rlElemento);
-        final View finalRowView = rowView;
         rlElemento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(finalRowView, "Click en: " + id + " (" + title + ")", Snackbar.LENGTH_LONG).show();
+                // TODO: Agregar animación entre fragments
+                Bundle arguments = new Bundle();
+                arguments.putString("id", id);
+                FrDetalle fr = new FrDetalle();
+                fr.setArguments(arguments);
+                ((FragmentActivity) context).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.content, fr)
+                        .addToBackStack("fr_detalle")
+                        .commit();
             }
         });
 
