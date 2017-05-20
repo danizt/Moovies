@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Objects;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Daniel on 13/05/2017.
  */
 
-public class MovGen implements Serializable {
+public class Movies implements Serializable {
     private String id;
     private String title;
     private String release_date;

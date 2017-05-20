@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Fragments;
 
 
 import android.os.Bundle;
@@ -13,10 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import com.acev.moovies.Adapters.AdaptadorLista;
+import com.acev.moovies.R;
+import com.acev.moovies.Tasks.TaskPopulares;
 
-import static com.acev.moovies.Config.listaPopulares;
+import static com.acev.moovies.Config.Main.listaPopulares;
 
 /**
  * Created by Daniel on 05/05/2017.

@@ -1,4 +1,6 @@
-package com.acev.moovies;
+package com.acev.moovies.Config;
+
+import com.acev.moovies.Objects.Movies;
 
 import java.util.ArrayList;
 
@@ -6,7 +8,7 @@ import java.util.ArrayList;
  * Created by Dani on 04/05/2017.
  */
 
-public class Config {
+public class Main {
 
     // Tiempo de espera para iniciar la actividad principal
     public static final long SPLASH_SCREEN_DELAY = 2000;
@@ -33,7 +35,7 @@ public class Config {
     public static final String API_POSTER_URL = "https://image.tmdb.org/t/p/w640<IMG_PATH>";
 
     // Array con el listado de películas a mostrar
-    public static ArrayList<MovGen> listaPopulares = new ArrayList<>();
+    public static ArrayList<Movies> listaPopulares = new ArrayList<>();
 
 
     // TAGs listado de películas

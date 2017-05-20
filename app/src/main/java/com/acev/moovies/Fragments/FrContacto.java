@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Fragments;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,10 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static com.acev.moovies.Config.API_URL_SEND_TEXT;
-import static com.acev.moovies.Config.CONTACT_TEXT;
-import static com.acev.moovies.Config.MI_CID;
-import static com.acev.moovies.Config.TOKEN;
+import com.acev.moovies.R;
+import com.acev.moovies.Tasks.TaskSendText;
+
+import static com.acev.moovies.Config.Main.CONTACT_TEXT;
 
 /**
  * Created by Dani on 08/05/2017.

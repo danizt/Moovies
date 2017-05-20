@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Activities;
 
 import android.app.Activity;
 
@@ -8,10 +8,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.acev.moovies.R;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.acev.moovies.Config.SPLASH_SCREEN_DELAY;
+import static com.acev.moovies.Config.Main.SPLASH_SCREEN_DELAY;
 
 /**
  * Created by Dani on 04/05/2017.

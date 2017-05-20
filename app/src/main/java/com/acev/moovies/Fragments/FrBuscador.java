@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Fragments;
 
 
 import android.os.Bundle;
@@ -9,18 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.acev.moovies.R;
+
 /**
  * Created by Daniel on 05/05/2017.
  */
 
-public class FrAleatoria extends Fragment {
-    public FrAleatoria() {
+public class FrBuscador extends Fragment {
+    public FrBuscador() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fr_aleatoria, container, false);
+        View root = inflater.inflate(R.layout.fr_buscador, container, false);
         return root;
     }
 
@@ -29,6 +31,6 @@ public class FrAleatoria extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // Título de la toolbar
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.aleatoria));
+        toolbar.setTitle(getResources().getString(R.string.buscador));
     }
 }

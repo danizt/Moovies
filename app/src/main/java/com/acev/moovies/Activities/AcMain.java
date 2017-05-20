@@ -1,4 +1,4 @@
-package com.acev.moovies;
+package com.acev.moovies.Activities;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,6 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.acev.moovies.Fragments.FrAleatoria;
+import com.acev.moovies.Fragments.FrBuscador;
+import com.acev.moovies.Fragments.FrContacto;
+import com.acev.moovies.Fragments.FrPopulares;
+import com.acev.moovies.R;
 import com.sylversky.fontreplacer.FontReplacer;
 import com.sylversky.fontreplacer.Replacer;
 

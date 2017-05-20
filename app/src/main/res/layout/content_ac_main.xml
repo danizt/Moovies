@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AcMain"
+    tools:context=".Activities.AcMain"
     tools:showIn="@layout/app_bar_ac_main">
 
     <FrameLayout android:id="@+id/content"

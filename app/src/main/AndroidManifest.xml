@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <!-- Activity inicial -->
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
 
         <!-- Activity principal -->
         <activity
-            android:name=".AcMain"
+            android:name=".Activities.AcMain"
             android:label="@string/populares"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">

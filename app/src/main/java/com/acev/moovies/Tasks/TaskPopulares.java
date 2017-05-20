@@ -1,8 +1,11 @@
-package com.acev.moovies;
+package com.acev.moovies.Tasks;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+
+import com.acev.moovies.Objects.Movies;
+import com.acev.moovies.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,24 +17,23 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.acev.moovies.Config.API_KEY;
-import static com.acev.moovies.Config.API_URL_GET_POPULARES;
-import static com.acev.moovies.Config.TAG_AVERAGE;
-import static com.acev.moovies.Config.TAG_BACKDROP;
-import static com.acev.moovies.Config.TAG_ID;
-import static com.acev.moovies.Config.TAG_POSTER;
-import static com.acev.moovies.Config.TAG_RELEASE_DATE;
-import static com.acev.moovies.Config.TAG_TITLE;
-import static com.acev.moovies.Config.listaPopulares;
+import static com.acev.moovies.Config.Main.API_KEY;
+import static com.acev.moovies.Config.Main.API_URL_GET_POPULARES;
+import static com.acev.moovies.Config.Main.TAG_AVERAGE;
+import static com.acev.moovies.Config.Main.TAG_BACKDROP;
+import static com.acev.moovies.Config.Main.TAG_ID;
+import static com.acev.moovies.Config.Main.TAG_POSTER;
+import static com.acev.moovies.Config.Main.TAG_RELEASE_DATE;
+import static com.acev.moovies.Config.Main.TAG_TITLE;
+import static com.acev.moovies.Config.Main.listaPopulares;
 
 /**
  * Created by Daniel on 14/05/2017.
  */
 
 public class TaskPopulares extends AsyncTask<Void, Integer, Boolean> {
-    private String jsonS;
     private Context context;
-    ProgressDialog pDialog;
+    public ProgressDialog pDialog;
 
     public TaskPopulares(Context context) {
         this.context = context;
@@ -69,8 +71,8 @@ public class TaskPopulares extends AsyncTask<Void, Integer, Boolean> {
         return false;
     }
 
-    private ArrayList<MovGen> obtenerListado(JSONArray JSONarray) {
-        ArrayList<MovGen> array = new ArrayList<>();
+    private ArrayList<Movies> obtenerListado(JSONArray JSONarray) {
+        ArrayList<Movies> array = new ArrayList<>();
         for (int i = 0; i < JSONarray.length(); i++) {
             try {
                 String titulo = JSONarray.getJSONObject(i).getString(TAG_TITLE);
@@ -80,7 +82,7 @@ public class TaskPopulares extends AsyncTask<Void, Integer, Boolean> {
                 String poster = JSONarray.getJSONObject(i).getString(TAG_POSTER);
                 String salida = JSONarray.getJSONObject(i).getString(TAG_RELEASE_DATE);
 
-                MovGen pelicula = new MovGen();
+                Movies pelicula = new Movies();
                 pelicula.setTitle(titulo);
                 pelicula.setId(id);
                 pelicula.setAverage(average);

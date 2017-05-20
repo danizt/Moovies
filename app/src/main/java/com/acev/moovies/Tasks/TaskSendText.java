@@ -1,19 +1,18 @@
-package com.acev.moovies;
+package com.acev.moovies.Tasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.acev.moovies.Config.API_URL_SEND_TEXT;
-import static com.acev.moovies.Config.MI_CID;
-import static com.acev.moovies.Config.TOKEN;
+import static com.acev.moovies.Config.Main.API_URL_SEND_TEXT;
+import static com.acev.moovies.Config.Main.MI_CID;
+import static com.acev.moovies.Config.Main.TOKEN;
 
 /**
  * Created by Daniel on 08/05/2017.
