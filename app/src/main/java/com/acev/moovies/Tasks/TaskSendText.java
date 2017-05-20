@@ -1,8 +1,11 @@
 package com.acev.moovies.Tasks;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.acev.moovies.R;
 
 import java.net.URLEncoder;
 
@@ -22,11 +25,19 @@ public class TaskSendText extends AsyncTask<Void, Integer, Boolean> {
 
     private String mensaje;
     private Context context;
+    public ProgressDialog pDialog;
 
 
     public TaskSendText(Context context, String mensaje) {
         this.context = context;
         this.mensaje = mensaje;
+        pDialog = new ProgressDialog(context);
+    }
+
+    @Override
+    protected void onPreExecute() {
+        this.pDialog.setMessage(context.getResources().getString(R.string.sending));
+        this.pDialog.show();
     }
 
     @Override

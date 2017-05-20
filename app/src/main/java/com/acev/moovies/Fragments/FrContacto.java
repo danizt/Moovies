@@ -114,6 +114,9 @@ public class FrContacto extends DialogFragment {
                                 @Override
                                 protected void onPostExecute(Boolean sem) {
                                     super.onPostExecute(sem);
+                                    if (pDialog.isShowing()) {
+                                        pDialog.dismiss();
+                                    }
                                     // Diálogo confirmado
                                     Snackbar.make(getActivity().findViewById(android.R.id.content),
                                             getResources().getString(R.string.mensaje_enviado),
