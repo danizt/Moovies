@@ -5,19 +5,24 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.acev.moovies.Objects.Detalle;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskDetalles;
-import com.acev.moovies.Tasks.TaskSendText;
+
+import java.util.List;
 
 /**
  * Created by Daniel on 20/05/2017.
  */
 
 public class FrDetalle extends Fragment {
+
+    public static Detalle det = new Detalle();
 
     public FrDetalle() {
     }
@@ -44,16 +49,36 @@ public class FrDetalle extends Fragment {
                 if (pDialog.isShowing()) {
                     pDialog.dismiss();
                 }
-                // Diálogo confirmado
-                Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        getResources().getString(R.string.mensaje_enviado),
-                        Snackbar.LENGTH_SHORT).show();
+
+                // Datos recibidos
+                Log.d("backdrop", det.getBackdrop());
+                Log.d("adult", det.getAdult().toString());
+                Log.d("overview", det.getOverview());
+                Log.d("poster", det.getPoster());
+                Log.d("release_date", det.getRelease_date());
+                Log.d("title", det.getTitle());
+                Log.d("vote_average", det.getVote_average());
+
+                List<String> genres = det.getGenres();
+                for(int e = 0; e < genres.size(); e++){
+                    Log.d("genre " + (e+1), genres.get(e));
+                }
+
+                List<String> production_companies = det.getProduction_company();
+                for(int f = 0; f < production_companies.size(); f++){
+                    Log.d("production_companies " + (f+1), production_companies.get(f));
+                }
+
+                Log.d("trailer", det.getTrailer());
+
+
+
+                // Título de la toolbar
+                Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+                toolbar.setTitle(det.getTitle());
+
 
             }
         }.execute();
-
-        // Título de la toolbar
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(id_detalle);
     }
 }

@@ -1,6 +1,7 @@
 package com.acev.moovies.Objects;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Daniel on 20/05/2017.
@@ -9,10 +10,10 @@ import java.io.Serializable;
 public class Detalle implements Serializable {
     private String backdrop;
     private Boolean adult;
-    private String[] genres;
+    private List<String> genres;
     private String overview;
     private String poster;
-    private String[] production_company;
+    private List<String> production_company;
     private String release_date;
     private String title;
     private String vote_average;
@@ -34,11 +35,11 @@ public class Detalle implements Serializable {
         this.adult = adult;
     }
 
-    public String[] getGenres() {
+    public List<String> getGenres() {
         return genres;
     }
 
-    public void setGenres(String[] genres) {
+    public void setGenres(List<String> genres) {
         this.genres = genres;
     }
 
@@ -58,11 +59,11 @@ public class Detalle implements Serializable {
         this.poster = poster;
     }
 
-    public String[] getProduction_company() {
+    public List<String> getProduction_company() {
         return production_company;
     }
 
-    public void setProduction_company(String[] production_company) {
+    public void setProduction_company(List<String> production_company) {
         this.production_company = production_company;
     }
 
