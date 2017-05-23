@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.acev.moovies.Activities.AcMain;
 import com.acev.moovies.Objects.Detalle;
@@ -19,6 +20,9 @@ import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskDetalles;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static com.acev.moovies.Config.Main.API_POSTER_URL;
@@ -59,12 +63,12 @@ public class FrDetalle extends Fragment {
                 }
 
                 // Datos recibidos
-                Log.d("backdrop", det.getBackdrop());
+                //Log.d("backdrop", det.getBackdrop());
                 Log.d("adult", det.getAdult().toString());
                 Log.d("overview", det.getOverview());
                 Log.d("poster", det.getPoster());
-                Log.d("release_date", det.getRelease_date());
-                Log.d("title", det.getTitle());
+                //Log.d("release_date", det.getRelease_date());
+                //Log.d("title", det.getTitle());
                 Log.d("vote_average", det.getVote_average());
 
                 List<String> genres = det.getGenres();
@@ -87,6 +91,21 @@ public class FrDetalle extends Fragment {
                 ImageView ivTitulo = (ImageView) getView().findViewById(R.id.imageTitulo);
                 ivTitulo.setScaleType(ImageView.ScaleType.FIT_XY);
                 Picasso.with(getActivity()).load(API_POSTER_URL.replace("<IMG_PATH>", det.getBackdrop())).into(ivTitulo);
+
+                // Título
+                TextView tvTitulo = (TextView) getView().findViewById(R.id.tvdtTitulo);
+                tvTitulo.setText(det.getTitle());
+
+                // Fecha de salida
+                String formattedDate = null;
+                try {
+                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(det.getRelease_date());
+                    formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                TextView tvRelease = (TextView) getView().findViewById(R.id.tvdtReleaseDate);
+                tvRelease.setText(formattedDate);
 
             }
         }.execute();
