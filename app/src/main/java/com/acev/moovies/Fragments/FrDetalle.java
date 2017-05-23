@@ -1,20 +1,27 @@
 package com.acev.moovies.Fragments;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.acev.moovies.Activities.AcMain;
 import com.acev.moovies.Objects.Detalle;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskDetalles;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import static com.acev.moovies.Config.Main.API_POSTER_URL;
 
 /**
  * Created by Daniel on 20/05/2017.
@@ -37,6 +44,7 @@ public class FrDetalle extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         // Obtener id de la película a mostrar
         String id_detalle = getArguments().getString("id");
@@ -71,14 +79,27 @@ public class FrDetalle extends Fragment {
 
                 Log.d("trailer", det.getTrailer());
 
-
-
                 // Título de la toolbar
-                Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+                Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarDetalle);
                 toolbar.setTitle(det.getTitle());
 
+                // Imágen superior
+                ImageView ivTitulo = (ImageView) getView().findViewById(R.id.imageTitulo);
+                ivTitulo.setScaleType(ImageView.ScaleType.FIT_XY);
+                Picasso.with(getActivity()).load(API_POSTER_URL.replace("<IMG_PATH>", det.getBackdrop())).into(ivTitulo);
 
             }
         }.execute();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
     }
 }

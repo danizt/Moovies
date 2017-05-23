@@ -45,4 +45,5 @@
 
     <string name="e_obtener_datos">E: Error al obtener los datos</string>
     <string name="estreno">Estreno:</string>
+    <string name="title">Título</string>
 </resources>

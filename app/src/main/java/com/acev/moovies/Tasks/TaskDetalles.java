@@ -97,11 +97,9 @@ public class TaskDetalles extends AsyncTask<Void, Integer, Boolean> {
             // Obtener trailer
             JSONObject trailerObject = mainData.getJSONObject("videos");
             JSONArray trailerArray = trailerObject.getJSONArray("results");
-            String key;
-            try{
+            String key = "blank";
+            if(trailerArray.getJSONObject(0).has("key")){
                 key = trailerArray.getJSONObject(0).getString("key");
-            } catch (Exception e){
-                key = "blank";
             }
             FrDetalle.det.setTrailer(key);
 

@@ -7,12 +7,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.acev.moovies.Activities.AcMain;
 import com.acev.moovies.Adapters.AdaptadorLista;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskPopulares;
@@ -43,6 +45,8 @@ public class FrPopulares extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Título de la toolbar
+
+
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.populares));
 
@@ -76,4 +80,12 @@ public class FrPopulares extends Fragment {
         adaptador = new AdaptadorLista(getContext(), listaPopulares);
         lvPopulares.setAdapter(adaptador);
     }
+
+    /*@Override
+    public void onResume() {
+        super.onResume();
+
+        Toolbar toolbar2 = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar2);
+    }*/
 }
