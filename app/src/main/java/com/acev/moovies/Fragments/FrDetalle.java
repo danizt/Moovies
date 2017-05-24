@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.acev.moovies.Activities.AcMain;
@@ -67,7 +68,6 @@ public class FrDetalle extends Fragment {
                 Log.d("adult", det.getAdult().toString());
                 Log.d("overview", det.getOverview());
                 Log.d("poster", det.getPoster());
-                Log.d("vote_average", det.getVote_average());
                 Log.d("trailer", det.getTrailer());
 
                 // Título de la toolbar
@@ -151,6 +151,17 @@ public class FrDetalle extends Fragment {
                 // ***************
                 // ***** cv2 *****
                 // ***************
+
+                // Rate en estrellas
+                Float nota = Float.parseFloat(det.getVote_average())/2;
+                RatingBar rbRate = (RatingBar) getView().findViewById(R.id.rbRate) ;
+                rbRate.setRating(nota);
+
+                // Rate numérico
+                TextView tvRate = (TextView) getView().findViewById(R.id.tvdtRate);
+                tvRate.setText("("+det.getVote_average()+")");
+
+
 
 //
 //                // Nota media
