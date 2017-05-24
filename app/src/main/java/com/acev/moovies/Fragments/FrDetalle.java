@@ -147,6 +147,11 @@ public class FrDetalle extends Fragment {
                 }
                 tvProd.setText(prod);
 
+
+                // ***************
+                // ***** cv2 *****
+                // ***************
+
 //
 //                // Nota media
 //                TextView tvAverage = (TextView) getView().findViewById(R.id.tvdtVote);
