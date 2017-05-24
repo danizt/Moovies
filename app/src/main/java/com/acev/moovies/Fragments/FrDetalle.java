@@ -67,9 +67,11 @@ public class FrDetalle extends Fragment {
                 Log.d("adult", det.getAdult().toString());
                 Log.d("overview", det.getOverview());
                 Log.d("poster", det.getPoster());
-                //Log.d("release_date", det.getRelease_date());
-                //Log.d("title", det.getTitle());
+                Log.d("release_date", det.getRelease_date());
+                Log.d("title", det.getTitle());
                 Log.d("vote_average", det.getVote_average());
+                Log.d("original_title", det.getOriginal_title());
+                Log.d("tagline", det.getTagline());
 
                 List<String> genres = det.getGenres();
                 for(int e = 0; e < genres.size(); e++){
@@ -92,20 +94,37 @@ public class FrDetalle extends Fragment {
                 ivTitulo.setScaleType(ImageView.ScaleType.FIT_XY);
                 Picasso.with(getActivity()).load(API_POSTER_URL.replace("<IMG_PATH>", det.getBackdrop())).into(ivTitulo);
 
-                // Título
-                TextView tvTitulo = (TextView) getView().findViewById(R.id.tvdtTitulo);
-                tvTitulo.setText(det.getTitle());
-
-                // Fecha de salida
-                String formattedDate = null;
-                try {
-                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(det.getRelease_date());
-                    formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                TextView tvRelease = (TextView) getView().findViewById(R.id.tvdtReleaseDate);
-                tvRelease.setText(formattedDate);
+//                // Título
+//                TextView tvTitulo = (TextView) getView().findViewById(R.id.tvdtTitulo);
+//                tvTitulo.setText(det.getTitle());
+//
+//                // Fecha de salida
+//                String formattedDate = null;
+//                try {
+//                    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(det.getRelease_date());
+//                    formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+//                TextView tvRelease = (TextView) getView().findViewById(R.id.tvdtReleaseDate);
+//                tvRelease.setText(formattedDate);
+//
+//                // Nota media
+//                TextView tvAverage = (TextView) getView().findViewById(R.id.tvdtVote);
+//                tvAverage.setText(det.getVote_average());
+//
+//                // Género
+//                String genre = "";
+//                TextView tvGenre = (TextView) getView().findViewById(R.id.tvdtGenre);
+//                List<String> genres = det.getGenres();
+//                for(int e = 0; e < genres.size(); e++){
+//                    if (e>0){
+//                        genre = genre + ", " + genres.get(e);
+//                    }else{
+//                        genre = genres.get(e);
+//                    }
+//                }
+//                tvGenre.setText(genre);
 
             }
         }.execute();

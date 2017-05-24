@@ -18,6 +18,8 @@ public class Detalle implements Serializable {
     private String title;
     private String vote_average;
     private String trailer;
+    private String original_title;
+    private String tagline;
 
     public String getBackdrop() {
         return backdrop;
@@ -97,5 +99,21 @@ public class Detalle implements Serializable {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public String getOriginal_title() {
+        return original_title;
+    }
+
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
+    }
+
+    public String getTagline() {
+        return tagline;
+    }
+
+    public void setTagline(String tagline) {
+        this.tagline = tagline;
     }
 }

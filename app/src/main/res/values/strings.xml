@@ -48,4 +48,7 @@
     <string name="title">Título</string>
     <string name="blank">blank</string>
     <string name="release_date">Fecha de salida</string>
+    <string name="nota_media">Nota media</string>
+    <string name="genre">Género(s)</string>
+    <string name="production">Productora(s)</string>
 </resources>

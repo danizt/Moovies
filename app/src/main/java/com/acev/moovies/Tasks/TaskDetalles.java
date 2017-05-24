@@ -72,6 +72,8 @@ public class TaskDetalles extends AsyncTask<Void, Integer, Boolean> {
             FrDetalle.det.setRelease_date(mainData.getString("release_date"));
             FrDetalle.det.setTitle(mainData.getString("title"));
             FrDetalle.det.setVote_average(mainData.getString("vote_average"));
+            FrDetalle.det.setOriginal_title(mainData.getString("original_title"));
+            FrDetalle.det.setTagline(mainData.getString("tagline"));
 
             // Obtener géneros
             JSONArray genreArray = mainData.getJSONArray("genres");
