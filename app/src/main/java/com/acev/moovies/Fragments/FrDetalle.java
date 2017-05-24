@@ -66,7 +66,6 @@ public class FrDetalle extends Fragment {
 
                 // Datos recibidos
                 Log.d("adult", det.getAdult().toString());
-                Log.d("overview", det.getOverview());
                 Log.d("poster", det.getPoster());
                 Log.d("trailer", det.getTrailer());
 
@@ -93,7 +92,6 @@ public class FrDetalle extends Fragment {
                 }else{
                     CardView cv0 = (CardView) getView().findViewById(R.id.cv0);
                     cv0.setVisibility(View.GONE);
-
                 }
 
 
@@ -162,12 +160,15 @@ public class FrDetalle extends Fragment {
                 tvRate.setText("("+det.getVote_average()+")");
 
 
+                // ***************
+                // ***** cv3 *****
+                // ***************
 
-//
-//                // Nota media
-//                TextView tvAverage = (TextView) getView().findViewById(R.id.tvdtVote);
-//                tvAverage.setText(det.getVote_average());
-//
+                // Sinopsis
+                TextView tvOverview = (TextView) getView().findViewById(R.id.tvdtOverview);
+                tvOverview.setText(det.getOverview());
+
+
 
 
             }
