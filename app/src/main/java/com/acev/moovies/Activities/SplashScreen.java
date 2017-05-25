@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.acev.moovies.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crash.FirebaseCrash;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,6 +34,11 @@ public class SplashScreen extends Activity {
         // Asignar layout a la actividad
         setContentView(R.layout.activity_splash_screen);
 
+
+        FirebaseCrash.log("Activity created");
+
+
+
         // Tarea que iniciará la siguiente actuvidad
         TimerTask task = new TimerTask() {
             @Override
@@ -43,7 +50,7 @@ public class SplashScreen extends Activity {
             }
         };
 
-        // Ejecutar tarea anterior
+        // Iniciar Actividad
         Timer timer = new Timer();
         timer.schedule(task, SPLASH_SCREEN_DELAY);
 

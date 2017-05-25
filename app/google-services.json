@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1092984697027",
+    "firebase_url": "https://moovies-87dc3.firebaseio.com",
+    "project_id": "moovies-87dc3",
+    "storage_bucket": "moovies-87dc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092984697027:android:409ef5b2a1110f50",
+        "android_client_info": {
+          "package_name": "com.acev.moovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092984697027-pn6sg10pbarfjp5o4eh9a0pcd2f0uap3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.acev.moovies",
+            "certificate_hash": "dfc5b12da076f47a6940eaf815b89e0c44f902c9"
+          }
+        },
+        {
+          "client_id": "1092984697027-269oufu7hj5rgisako5kp24aoplpiujc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAutxBzTuF7_SKs_hpA0nZ4pE1Nc951HkE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092984697027-269oufu7hj5rgisako5kp24aoplpiujc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
