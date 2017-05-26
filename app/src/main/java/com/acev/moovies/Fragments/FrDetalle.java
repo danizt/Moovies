@@ -169,6 +169,14 @@ public class FrDetalle extends Fragment {
                 tvOverview.setText(det.getOverview());
 
 
+                // ***************
+                // ***** cv3 *****
+                // ***************
+
+
+                
+
+
 
 
             }
