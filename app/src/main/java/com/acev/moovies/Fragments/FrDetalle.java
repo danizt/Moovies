@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -28,6 +30,7 @@ import java.util.Date;
 import java.util.List;
 
 import static com.acev.moovies.Config.Main.API_POSTER_URL;
+import static com.acev.moovies.Config.Main.URL_YT_EMBED;
 
 /**
  * Created by Daniel on 20/05/2017.
@@ -67,7 +70,6 @@ public class FrDetalle extends Fragment {
                 // Datos recibidos
                 Log.d("adult", det.getAdult().toString());
                 Log.d("poster", det.getPoster());
-                Log.d("trailer", det.getTrailer());
 
                 // Título de la toolbar
                 Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarDetalle);
@@ -173,12 +175,16 @@ public class FrDetalle extends Fragment {
                 // ***** cv3 *****
                 // ***************
 
-
-                
-
-
-
-
+                // Trailer
+                if (!det.getTrailer().equals("")){
+                    WebView myWebView = (WebView) getView().findViewById(R.id.wbTrailer);
+                    WebSettings webSettings = myWebView.getSettings();
+                    webSettings.setJavaScriptEnabled(true);
+                    myWebView.loadUrl(URL_YT_EMBED + det.getTrailer());
+                }else{
+                    CardView cv4 = (CardView) getView().findViewById(R.id.cv4);
+                    cv4.setVisibility(View.GONE);
+                }
             }
         }.execute();
     }

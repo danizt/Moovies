@@ -40,6 +40,9 @@ public class Main {
     // Array con el listado de películas a mostrar
     public static ArrayList<Movies> listaPopulares = new ArrayList<>();
 
+    // Path para embed de YouTube
+    public static final String URL_YT_EMBED = "https://www.youtube.com/embed/";
+
 
     // TAGs listado de películas
     public static final String TAG_ID = "id";
