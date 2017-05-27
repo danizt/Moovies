@@ -52,7 +52,8 @@ public class AcMain extends AppCompatActivity
         navigationView.setItemIconTintList(null);
 
 
-        // Seleccionar como contenido el Fragment del listado de notas
+        // Seleccionar como contenido "Populares"
+        navigationView.getMenu().getItem(0).setChecked(true);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content, new FrPopulares())
                 .commit();
