@@ -126,7 +126,7 @@ public class FrDetalle extends Fragment {
                 List<String> genres = det.getGenres();
                 for (int e = 0; e < genres.size(); e++) {
                     if (e > 0) {
-                        genre = genre + ", " + genres.get(e);
+                        genre = genre + ", " + genres.get(e).toLowerCase();
                     } else {
                         genre = genres.get(e);
                     }
