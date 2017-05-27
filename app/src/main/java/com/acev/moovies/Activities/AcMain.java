@@ -109,6 +109,10 @@ public class AcMain extends AppCompatActivity
             new FrContacto().show(getSupportFragmentManager(), "Contacto");
         } else if (id == R.id.nav_valorar) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
+        } else if (id == R.id.nav_about) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (about)", Snackbar.LENGTH_LONG).show();
+        } else if (id == R.id.nav_donar) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (donar)", Snackbar.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
