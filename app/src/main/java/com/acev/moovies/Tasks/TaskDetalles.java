@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -48,7 +49,7 @@ public class TaskDetalles extends AsyncTask<Void, Integer, Boolean> {
         // Formar URL para enviar mensaje
         String url = null;
         try {
-            url = API_URL_GET_DETALLES.replace("<KEY>", API_KEY).replace("<ID>", id_detalle);
+            url = API_URL_GET_DETALLES.replace("<KEY>", API_KEY).replace("<ID>", id_detalle).replace("<LANG>", Locale.getDefault().getLanguage());
 
             OkHttpClient client = new OkHttpClient();
 

@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -49,7 +50,7 @@ public class TaskPopulares extends AsyncTask<Void, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
-        String url = API_URL_GET_POPULARES.replace("<KEY>", API_KEY);
+        String url = API_URL_GET_POPULARES.replace("<KEY>", API_KEY).replace("<LANG>", Locale.getDefault().getLanguage());
 
         Request request = new Request.Builder()
                 .url(url)
