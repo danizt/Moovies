@@ -21,7 +21,6 @@ import okhttp3.Response;
 
 import static com.acev.moovies.Config.Main.API_KEY;
 import static com.acev.moovies.Config.Main.API_URL_GET_DETALLES;
-import static com.acev.moovies.Config.Main.TOKEN;
 
 /**
  * Created by Daniel on 14/05/2017.
@@ -101,7 +100,7 @@ public class TaskDetalles extends AsyncTask<Void, Integer, Boolean> {
             JSONObject trailerObject = mainData.getJSONObject("videos");
             JSONArray trailerArray = trailerObject.getJSONArray("results");
             String key = "blank";
-            if(trailerArray.getJSONObject(0).has("key")){
+            if(trailerArray.length() != 0){
                 key = trailerArray.getJSONObject(0).getString("key");
             }
             FrDetalle.det.setTrailer(key);

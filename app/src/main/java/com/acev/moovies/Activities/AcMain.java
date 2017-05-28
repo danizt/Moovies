@@ -16,6 +16,7 @@ import com.acev.moovies.Fragments.FrAleatoria;
 import com.acev.moovies.Fragments.FrBuscador;
 import com.acev.moovies.Fragments.FrContacto;
 import com.acev.moovies.Fragments.FrPopulares;
+import com.acev.moovies.Fragments.FrUpcoming;
 import com.acev.moovies.R;
 import com.sylversky.fontreplacer.FontReplacer;
 import com.sylversky.fontreplacer.Replacer;
@@ -93,8 +94,10 @@ public class AcMain extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_populares) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (populares)", Snackbar.LENGTH_LONG).show();
             cambiarFragment(new FrPopulares());
+        }
+        else if (id == R.id.nav_upcoming) {
+            cambiarFragment(new FrUpcoming());
         }
         else if (id == R.id.nav_aleatoria) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();

@@ -54,6 +54,8 @@ public class FrDetalle extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Eliminar datos de la anterior película vista
+//        det = null;
 
         // Obtener id de la película a mostrar
         String id_detalle = getArguments().getString("id");
@@ -172,11 +174,11 @@ public class FrDetalle extends Fragment {
 
 
                 // ***************
-                // ***** cv3 *****
+                // ***** cv4 *****
                 // ***************
 
                 // Trailer
-                if (!det.getTrailer().equals("")){
+                if (!det.getTrailer().equals("blank")){
                     WebView myWebView = (WebView) getView().findViewById(R.id.wbTrailer);
                     WebSettings webSettings = myWebView.getSettings();
                     webSettings.setJavaScriptEnabled(true);

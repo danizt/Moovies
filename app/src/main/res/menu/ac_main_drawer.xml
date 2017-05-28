@@ -7,9 +7,13 @@
             android:icon="@drawable/ic_whatshot_black_24dp"
             android:title="@string/populares" />
         <item
+            android:id="@+id/nav_upcoming"
+            android:icon="@drawable/ic_update_black_24dp"
+            android:title="@string/upcoming" />
+        <item
             android:id="@+id/nav_aleatoria"
             android:icon="@drawable/ic_shuffle_black_24dp"
-            android:title="@string/aleatoria" />.
+            android:title="@string/aleatoria" />
         <item
             android:id="@+id/nav_buscador"
             android:icon="@drawable/ic_search_black_24dp"
