@@ -26,4 +26,9 @@
         <item name="android:shadowRadius">4</item>
     </style>
 
+    <style name="DialogAnimation_1" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/anim_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_out</item>
+    </style>
+
 </resources>

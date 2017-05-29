@@ -26,6 +26,14 @@ import static com.acev.moovies.Config.Main.CONTACT_TEXT;
 public class FrContacto extends DialogFragment {
 
     Context context;
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getDialog().getWindow()
+                .getAttributes().windowAnimations = R.style.DialogAnimation_1;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fr_contacto, container, false);
