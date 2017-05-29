@@ -95,7 +95,7 @@ public class FrBuscador extends Fragment {
 
     private void crearLista() {
         if (listaBuscador.isEmpty()){
-            Toast.makeText(getActivity(), "No se ha encontado ningún resultado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getContext().getResources().getString(R.string.e_buscar), Toast.LENGTH_SHORT).show();
         }
         lvBuscador = (ListView) getView().findViewById(R.id.lvBuscador);
         adaptador = new AdaptadorLista(getContext(), listaBuscador);
