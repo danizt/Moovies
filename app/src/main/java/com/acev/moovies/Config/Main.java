@@ -32,7 +32,7 @@ public class Main {
     public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=<LANG>";
 
     // Llamada al API de themoviedb para obtener próximos lanzamientos
-    public static final String API_URL_GET_UPCOMING = "http://api.themoviedb.org/3/discover/movie?api_key=<KEY>&language=<LANG>&primary_release_date.gte=2017-5-29";
+    public static final String API_URL_GET_UPCOMING = "http://api.themoviedb.org/3/discover/movie?api_key=<KEY>&language=<LANG>&primary_release_date.gte=2017-5-29&sort_by=popularity.desc";
 
     // Llamada al API de themoviedb para obtener detalles de una palícula
     public static final String API_URL_GET_DETALLES = "http://api.themoviedb.org/3/movie/<ID>?append_to_response=videos&api_key=<KEY>&language=<LANG>";
