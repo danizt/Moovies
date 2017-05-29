@@ -202,4 +202,16 @@ public class FrDetalle extends Fragment {
         super.onStop();
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            WebView myWebView = (WebView) getView().findViewById(R.id.wbTrailer);
+            Class.forName("android.webkit.WebView")
+                    .getMethod("onPause", (Class[]) null)
+                    .invoke(myWebView, (Object[]) null);
+        } catch(Exception e) {
+        }
+    }
 }
