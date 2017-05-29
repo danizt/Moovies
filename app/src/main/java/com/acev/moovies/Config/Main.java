@@ -26,7 +26,7 @@ public class Main {
     public static final String MI_CID = SecretConfig.MI_CID;
 
     // Formato del mensaje
-    public static final String CONTACT_TEXT= "Asunto: <ASUNTO>\nEmail: <EMAIL>\n\nMensaje:\n<MESSAGE>";
+    public static final String CONTACT_TEXT = "Asunto: <ASUNTO>\nEmail: <EMAIL>\n\nMensaje:\n<MESSAGE>";
 
     // Llamada al API de themoviedb para obtener peliculas populares
     public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=<LANG>";
@@ -37,12 +37,16 @@ public class Main {
     // Llamada al API de themoviedb para obtener detalles de una palícula
     public static final String API_URL_GET_DETALLES = "http://api.themoviedb.org/3/movie/<ID>?append_to_response=videos&api_key=<KEY>&language=<LANG>";
 
+    // Llamada al API de themoviedb para obtener datos de búsquedas
+    public static final String API_URL_GET_SEARCH = "http://api.themoviedb.org/3/search/movie?query=<QUERY>&api_key=<KEY>&language=<LANG>&sort_by=popularity.desc";
+
     // Ruta para obtener las imágenes del API
     public static final String API_POSTER_URL = "https://image.tmdb.org/t/p/w640<IMG_PATH>";
 
     // Array con el listado de películas a mostrar
     public static ArrayList<Movies> listaPopulares = new ArrayList<>();
     public static ArrayList<Movies> listaUpcoming = new ArrayList<>();
+    public static ArrayList<Movies> listaBuscador = new ArrayList<>();
 
     // Path para embed de YouTube
     public static final String URL_YT_EMBED = "https://www.youtube.com/embed/";

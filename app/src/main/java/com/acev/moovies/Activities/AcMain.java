@@ -104,7 +104,6 @@ public class AcMain extends AppCompatActivity
             cambiarFragment(new FrAleatoria());
         }
         else if (id == R.id.nav_buscador) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (buscador)", Snackbar.LENGTH_LONG).show();
             cambiarFragment( new FrBuscador());
         }
         else if (id == R.id.nav_compartir) {
