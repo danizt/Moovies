@@ -61,6 +61,7 @@
     <string name="reintentar">Reintentar</string>
     <string name="buscar">Buscar</string>
     <string name="e_buscar">No se ha encontado ningún resultado</string>
-    <string name="developer">Desarrollador</string>
-    <string name="developer_name">Nombre del desarrollador</string>
+    <string name="developed_by">Desarrollado por </string>
+    <string name="developer_name">Daniel Zarzoso</string>
+    <string name="TMDb">Este producto utiliza el API TMDb pero no está respaldada ni certificada por TMDb.</string>
 </resources>

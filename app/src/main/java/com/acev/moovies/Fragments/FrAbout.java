@@ -2,12 +2,16 @@ package com.acev.moovies.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.acev.moovies.R;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by Usuario on 29/05/2017.
@@ -30,4 +34,11 @@ public class FrAbout extends DialogFragment {
         return rootView;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        TextView tvDeveloper = (TextView) view.findViewById(R.id.tvDeveloper);
+        tvDeveloper.setText(getString(R.string.developed_by) + " " + getString(R.string.developer_name));
+    }
 }
