@@ -68,24 +68,11 @@ public class AcMain extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-
-
-
                 Fragment myFragment = getSupportFragmentManager().findFragmentByTag("fr_detalle");
                 if (myFragment != null && myFragment.isVisible()) {
                     getSupportFragmentManager().beginTransaction().remove(myFragment);
 
                 }
-
-
-
-
-
-
-
-
-
-
                 getSupportFragmentManager().popBackStack();
             } else {
                 // Diálogo de confirmación para salir de la aplicación

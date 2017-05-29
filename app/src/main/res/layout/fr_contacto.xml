@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp">
+            android:padding="20dp">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_asunto"
@@ -74,17 +74,22 @@
                 android:layout_below="@+id/input_layout_mensaje"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorPrimaryLight"
+                />
 
             <Button
                 android:id="@+id/btCancelar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cancelar"
-                android:layout_below="@+id/input_layout_mensaje"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="10dp"/>
+                android:layout_below="@+id/input_layout_mensaje"
+                android:layout_margin="10dp"
+                android:text="@string/cancelar"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorPrimaryLight"/>
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
