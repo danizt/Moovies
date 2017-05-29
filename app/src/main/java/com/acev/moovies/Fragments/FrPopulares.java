@@ -27,6 +27,8 @@ public class FrPopulares extends Fragment {
     AdaptadorLista adaptador;
     ListView lvPopulares;
 
+    Snackbar sbError;
+
     public FrPopulares() {
     }
 
@@ -42,22 +44,33 @@ public class FrPopulares extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         // Título de la toolbar
-
-
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.populares));
 
         // Obtener los datos del API
-        if (listaPopulares == null || listaPopulares.isEmpty()){
+        if (listaPopulares == null || listaPopulares.isEmpty()) {
             obtenerDatos();
-        } else{
+        } else {
             crearLista();
         }
     }
 
     // Obtener datos del API
-    public void obtenerDatos(){
+    public void obtenerDatos() {
+        sbError = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                getResources().getString(R.string.e_obtener_datos),
+                Snackbar.LENGTH_INDEFINITE)
+                .setAction(R.string.reintentar, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        obtenerDatos();
+                    }
+                });
+        if(sbError.isShown()){
+            sbError.dismiss();
+        }
         new TaskPopulares(getActivity()) {
             @Override
             protected void onPostExecute(Boolean sem) {
@@ -67,15 +80,24 @@ public class FrPopulares extends Fragment {
                 if (sem) {
                     crearLista();
                 } else {
-//                    Snackbar.make(getView().findViewById(android.R.id.content), getResources().getString(R.string.e_obtener_datos), Snackbar.LENGTH_INDEFINITE).show();
+                    sbError.show();
                 }
             }
         }.execute();
     }
+
     // Generar la interfaz del listView
-    private void crearLista(){
+    private void crearLista() {
         lvPopulares = (ListView) getView().findViewById(R.id.lvListado);
         adaptador = new AdaptadorLista(getContext(), listaPopulares);
         lvPopulares.setAdapter(adaptador);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(sbError.isShown()){
+            sbError.dismiss();
+        }
     }
 }

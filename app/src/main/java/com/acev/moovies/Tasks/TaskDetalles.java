@@ -105,7 +105,7 @@ public class TaskDetalles extends AsyncTask<Void, Integer, Boolean> {
             }
             FrDetalle.det.setTrailer(key);
 
-
+            return true;
 
         } catch (Exception e) {
             e.printStackTrace();

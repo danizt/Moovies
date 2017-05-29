@@ -2,6 +2,7 @@ package com.acev.moovies.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -23,6 +24,7 @@ import static com.acev.moovies.Config.Main.listaUpcoming;
 public class FrUpcoming extends Fragment {
     AdaptadorLista adaptador;
     ListView lvUpcoming;
+    Snackbar sbError;
 
     public FrUpcoming() {
     }
@@ -57,18 +59,28 @@ public class FrUpcoming extends Fragment {
 
     // Obtener datos del API
     public void obtenerDatos() {
-        Log.e("FrUpcoming", "obtenerDatos");
+        sbError = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                getResources().getString(R.string.e_obtener_datos),
+                Snackbar.LENGTH_INDEFINITE)
+                .setAction(R.string.reintentar, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        obtenerDatos();
+                    }
+                });
+        if(sbError.isShown()){
+            sbError.dismiss();
+        }
         new TaskUpcoming(getActivity()) {
             @Override
             protected void onPostExecute(Boolean sem) {
-                Log.e("FrUpcoming", "onPostExecute");
                 if (pDialog.isShowing()) {
                     pDialog.dismiss();
                 }
                 if (sem) {
                     crearLista();
                 } else {
-//                    Snackbar.make(getView().findViewById(android.R.id.content), getResources().getString(R.string.e_obtener_datos), Snackbar.LENGTH_INDEFINITE).show();
+                    sbError.show();
                 }
             }
         }.execute();
@@ -80,5 +92,13 @@ public class FrUpcoming extends Fragment {
         lvUpcoming = (ListView) getView().findViewById(R.id.lvListado);
         adaptador = new AdaptadorLista(getContext(), listaUpcoming);
         lvUpcoming.setAdapter(adaptador);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(sbError.isShown()){
+            sbError.dismiss();
+        }
     }
 }
