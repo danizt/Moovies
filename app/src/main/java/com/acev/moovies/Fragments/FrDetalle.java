@@ -54,9 +54,6 @@ public class FrDetalle extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Eliminar datos de la anterior película vista
-//        det = null;
-
         // Obtener id de la película a mostrar
         String id_detalle = getArguments().getString("id");
 

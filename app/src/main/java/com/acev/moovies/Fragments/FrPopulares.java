@@ -7,14 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.acev.moovies.Activities.AcMain;
 import com.acev.moovies.Adapters.AdaptadorLista;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskPopulares;
@@ -36,7 +34,7 @@ public class FrPopulares extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fr_populares, container, false);
+        View root = inflater.inflate(R.layout.ly_listado, container, false);
 
         return root;
     }
@@ -69,14 +67,14 @@ public class FrPopulares extends Fragment {
                 if (sem) {
                     crearLista();
                 } else {
-                    Snackbar.make(getView().findViewById(android.R.id.content), getResources().getString(R.string.e_obtener_datos), Snackbar.LENGTH_INDEFINITE).show();
+//                    Snackbar.make(getView().findViewById(android.R.id.content), getResources().getString(R.string.e_obtener_datos), Snackbar.LENGTH_INDEFINITE).show();
                 }
             }
         }.execute();
     }
     // Generar la interfaz del listView
     private void crearLista(){
-        lvPopulares = (ListView) getView().findViewById(R.id.listaPopulares);
+        lvPopulares = (ListView) getView().findViewById(R.id.lvListado);
         adaptador = new AdaptadorLista(getContext(), listaPopulares);
         lvPopulares.setAdapter(adaptador);
     }

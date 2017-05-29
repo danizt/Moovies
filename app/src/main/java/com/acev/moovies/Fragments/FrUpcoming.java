@@ -2,7 +2,6 @@ package com.acev.moovies.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,7 +31,7 @@ public class FrUpcoming extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fr_upcoming, container, false);
+        View root = inflater.inflate(R.layout.ly_listado, container, false);
 
         return root;
     }
@@ -78,7 +77,7 @@ public class FrUpcoming extends Fragment {
     // Generar la interfaz del listView
     private void crearLista() {
         Log.e("FrUpcoming", "crearLista");
-        lvUpcoming = (ListView) getView().findViewById(R.id.listaUpcoming);
+        lvUpcoming = (ListView) getView().findViewById(R.id.lvListado);
         adaptador = new AdaptadorLista(getContext(), listaUpcoming);
         lvUpcoming.setAdapter(adaptador);
     }
