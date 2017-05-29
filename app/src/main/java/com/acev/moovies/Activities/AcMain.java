@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.acev.moovies.Fragments.FrAbout;
 import com.acev.moovies.Fragments.FrAleatoria;
 import com.acev.moovies.Fragments.FrBuscador;
 import com.acev.moovies.Fragments.FrContacto;
@@ -122,7 +123,7 @@ public class AcMain extends AppCompatActivity
             Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
         }
         else if (id == R.id.nav_about) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (about)", Snackbar.LENGTH_LONG).show();
+            new FrAbout().show(getSupportFragmentManager(), "About");
         }
 //        else if (id == R.id.nav_donar) {
 //            Snackbar.make(findViewById(android.R.id.content), "En construcción (donar)", Snackbar.LENGTH_LONG).show();

@@ -61,4 +61,6 @@
     <string name="reintentar">Reintentar</string>
     <string name="buscar">Buscar</string>
     <string name="e_buscar">No se ha encontado ningún resultado</string>
+    <string name="developer">Desarrollador</string>
+    <string name="developer_name">Nombre del desarrollador</string>
 </resources>
