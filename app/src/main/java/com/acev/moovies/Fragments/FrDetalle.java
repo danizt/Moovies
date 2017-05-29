@@ -231,8 +231,10 @@ public class FrDetalle extends Fragment {
                     .invoke(myWebView, (Object[]) null);
         } catch(Exception e) {
         }
-        if(sbError.isShown()){
-            sbError.dismiss();
+        if (!(sbError == null)){
+            if(sbError.isShown()){
+                sbError.dismiss();
+            }
         }
     }
 }

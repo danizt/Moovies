@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Main {
 
     // Tiempo de espera para iniciar la actividad principal
-    public static final long SPLASH_SCREEN_DELAY = 2000;
+    public static final long SPLASH_SCREEN_DELAY = 500;
 
     // Key del API themoviedb
     public static final String API_KEY = SecretConfig.API_KEY;

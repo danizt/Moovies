@@ -96,8 +96,10 @@ public class FrPopulares extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if(sbError.isShown()){
-            sbError.dismiss();
+        if (!(sbError == null)){
+            if(sbError.isShown()){
+                sbError.dismiss();
+            }
         }
     }
 }

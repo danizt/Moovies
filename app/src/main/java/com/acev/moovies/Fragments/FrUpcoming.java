@@ -41,14 +41,12 @@ public class FrUpcoming extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
         // Título de la toolbar
-
-
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.upcoming));
 
-
-        Log.e("FrUpcoming", "onViewCreated");
         // Obtener los datos del API
         if (listaUpcoming == null || listaUpcoming.isEmpty()) {
             obtenerDatos();
@@ -88,7 +86,6 @@ public class FrUpcoming extends Fragment {
 
     // Generar la interfaz del listView
     private void crearLista() {
-        Log.e("FrUpcoming", "crearLista");
         lvUpcoming = (ListView) getView().findViewById(R.id.lvListado);
         adaptador = new AdaptadorLista(getContext(), listaUpcoming);
         lvUpcoming.setAdapter(adaptador);
@@ -97,8 +94,10 @@ public class FrUpcoming extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if(sbError.isShown()){
-            sbError.dismiss();
+        if (!(sbError == null)){
+            if(sbError.isShown()){
+                sbError.dismiss();
+            }
         }
     }
 }
