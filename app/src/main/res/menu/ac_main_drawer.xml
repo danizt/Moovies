@@ -10,10 +10,10 @@
             android:id="@+id/nav_upcoming"
             android:icon="@drawable/ic_update_black_24dp"
             android:title="@string/upcoming" />
-        <item
-            android:id="@+id/nav_aleatoria"
-            android:icon="@drawable/ic_shuffle_black_24dp"
-            android:title="@string/aleatoria" />
+        <!--<item-->
+            <!--android:id="@+id/nav_aleatoria"-->
+            <!--android:icon="@drawable/ic_shuffle_black_24dp"-->
+            <!--android:title="@string/aleatoria" />-->
         <item
             android:id="@+id/nav_buscador"
             android:icon="@drawable/ic_search_black_24dp"
@@ -22,10 +22,10 @@
 
     <item android:title="@string/comunicacion">
         <menu>
-            <item
-                android:id="@+id/nav_donar"
-                android:icon="@drawable/ic_favorite_border_black_24dp"
-                android:title="@string/donar" />
+            <!--<item-->
+                <!--android:id="@+id/nav_donar"-->
+                <!--android:icon="@drawable/ic_favorite_border_black_24dp"-->
+                <!--android:title="@string/donar" />-->
             <item
                 android:id="@+id/nav_compartir"
                 android:icon="@drawable/ic_share_black_24dp"

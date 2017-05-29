@@ -105,24 +105,28 @@ public class AcMain extends AppCompatActivity
         else if (id == R.id.nav_upcoming) {
             cambiarFragment(new FrUpcoming());
         }
-        else if (id == R.id.nav_aleatoria) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();
-            cambiarFragment(new FrAleatoria());
-        }
+//        else if (id == R.id.nav_aleatoria) {
+//            Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();
+//            cambiarFragment(new FrAleatoria());
+//        }
         else if (id == R.id.nav_buscador) {
             cambiarFragment( new FrBuscador());
         }
         else if (id == R.id.nav_compartir) {
             Snackbar.make(findViewById(android.R.id.content), "En construcción (compartir)", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_contactar) {
-            new FrContacto().show(getSupportFragmentManager(), "Contacto");
-        } else if (id == R.id.nav_valorar) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_about) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (about)", Snackbar.LENGTH_LONG).show();
-        } else if (id == R.id.nav_donar) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (donar)", Snackbar.LENGTH_LONG).show();
         }
+        else if (id == R.id.nav_contactar) {
+            new FrContacto().show(getSupportFragmentManager(), "Contacto");
+        }
+        else if (id == R.id.nav_valorar) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
+        }
+        else if (id == R.id.nav_about) {
+            Snackbar.make(findViewById(android.R.id.content), "En construcción (about)", Snackbar.LENGTH_LONG).show();
+        }
+//        else if (id == R.id.nav_donar) {
+//            Snackbar.make(findViewById(android.R.id.content), "En construcción (donar)", Snackbar.LENGTH_LONG).show();
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
