@@ -2,7 +2,6 @@ package com.acev.moovies.Adapters;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,7 +101,7 @@ public class AdaptadorLista extends BaseAdapter {
                 fr.setArguments(arguments);
                 ((FragmentActivity) context).getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.content, fr)
+                        .replace(R.id.content, fr, "fr_detalle")
                         .addToBackStack("fr_detalle")
                         .commit();
             }
