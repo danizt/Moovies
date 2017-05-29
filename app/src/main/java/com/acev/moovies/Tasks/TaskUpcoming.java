@@ -11,7 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Locale;
 
 import okhttp3.OkHttpClient;
@@ -50,8 +52,11 @@ public class TaskUpcoming extends AsyncTask<Void, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
-        // TODO: Fecha automática
-        String url = API_URL_GET_UPCOMING.replace("<KEY>", API_KEY).replace("<LANG>", Locale.getDefault().getLanguage().replace("<DATE>", "2017-5-29"));
+        Calendar c1 = Calendar.getInstance();
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        String date = format1.format(c1.getTime());
+
+        String url = API_URL_GET_UPCOMING.replace("<KEY>", API_KEY).replace("<LANG>", Locale.getDefault().getLanguage().replace("<DATE>", date));
 
         Request request = new Request.Builder()
                 .url(url)
