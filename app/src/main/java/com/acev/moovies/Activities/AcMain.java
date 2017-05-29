@@ -134,11 +134,10 @@ public class AcMain extends AppCompatActivity
     }
 
     public void cambiarFragment(android.support.v4.app.Fragment nuevoFragment) {
-        // TODO: Animaciones entre fragments
-//        .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,
-//                R.anim.enter_from_left, R.anim.exit_to_right)
         getSupportFragmentManager()
                 .beginTransaction()
+                .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left,
+                    R.anim.enter_from_left, R.anim.exit_to_right)
                 .replace(R.id.content, nuevoFragment)
                 .commit();
     }

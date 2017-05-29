@@ -94,7 +94,6 @@ public class AdaptadorLista extends BaseAdapter {
         rlElemento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Agregar animación entre fragments
                 Bundle arguments = new Bundle();
                 arguments.putString("id", id);
                 FrDetalle fr = new FrDetalle();

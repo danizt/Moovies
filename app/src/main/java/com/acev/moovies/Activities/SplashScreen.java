@@ -53,8 +53,6 @@ public class SplashScreen extends Activity {
         // Iniciar Actividad
         Timer timer = new Timer();
         timer.schedule(task, SPLASH_SCREEN_DELAY);
-
-        //TODO: Comprobar conexión a internet para iniciar el app.
     }
 
 }
