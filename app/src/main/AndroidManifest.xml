@@ -27,7 +27,8 @@
             android:name=".Activities.AcMain"
             android:label="@string/populares"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenLayout|uiMode|screenSize">
         </activity>
     </application>
 
