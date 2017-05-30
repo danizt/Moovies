@@ -51,6 +51,24 @@ public class Main {
     // Path para embed de YouTube
     public static final String URL_YT_EMBED = "https://www.youtube.com/embed/";
 
+    // Path para enlace a GitHub
+    public static final String URL_GITHUB = "https://github.com/<USER>";
+
+    // Usuario de GitHub
+    public static final String GITHUB_USER = SecretConfig.GITHUB_USER;
+
+    // Path para enlace a Linkedin
+    public static final String URL_LINKEDIN = "https://www.linkedin.com/in/<USER>";
+
+    // Usuario de Linkedin
+    public static final String LINKEDIN_USER = SecretConfig.LINKEDIN_USER;
+
+    // Path para enlace a TMDb
+    public static final String URL_TMDB = "https://www.themoviedb.org/documentation/api";
+
+    // Path para enlace a PlayStore
+    public static final String URL_PLAYSTORE = "https://play.google.com/store/apps/details?id=<PAQUETE>";
+
 
     // TAGs listado de películas
     public static final String TAG_ID = "id";
