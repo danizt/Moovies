@@ -64,4 +64,6 @@
     <string name="developed_by">Desarrollado por </string>
     <string name="developer_name">Daniel Zarzoso</string>
     <string name="TMDb">Este producto utiliza el API TMDb pero no está respaldada ni certificada por TMDb.</string>
+    <string name="share">Compartir</string>
+    <string name="share_message">Echa un vistazo a esta herramienta para consultar cualquier película.</string>
 </resources>

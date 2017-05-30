@@ -1,6 +1,8 @@
 package com.acev.moovies.Activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -22,6 +24,8 @@ import com.acev.moovies.Fragments.FrUpcoming;
 import com.acev.moovies.R;
 import com.sylversky.fontreplacer.FontReplacer;
 import com.sylversky.fontreplacer.Replacer;
+
+import static com.acev.moovies.Config.Main.URL_PLAYSTORE;
 
 
 public class AcMain extends AppCompatActivity
@@ -114,13 +118,13 @@ public class AcMain extends AppCompatActivity
             cambiarFragment( new FrBuscador());
         }
         else if (id == R.id.nav_compartir) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (compartir)", Snackbar.LENGTH_LONG).show();
+            compartir();
         }
         else if (id == R.id.nav_contactar) {
             new FrContacto().show(getSupportFragmentManager(), "Contacto");
         }
         else if (id == R.id.nav_valorar) {
-            Snackbar.make(findViewById(android.R.id.content), "En construcción (valorar)", Snackbar.LENGTH_LONG).show();
+            valorar();
         }
         else if (id == R.id.nav_about) {
             new FrAbout().show(getSupportFragmentManager(), "About");
@@ -141,5 +145,21 @@ public class AcMain extends AppCompatActivity
                     R.anim.enter_from_left, R.anim.exit_to_right)
                 .replace(R.id.content, nuevoFragment)
                 .commit();
+    }
+
+    public void compartir(){
+        String shareBody = getResources().getString(R.string.share_message) + "\n" + URL_PLAYSTORE.replace("<PAQUETE>", getApplicationContext().getPackageName());
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.share)));
+    }
+
+    public void valorar() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(URL_PLAYSTORE.replace("<PAQUETE>", getApplicationContext().getPackageName())));
+        startActivity(intent);
     }
 }
