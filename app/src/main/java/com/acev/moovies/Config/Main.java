@@ -31,6 +31,9 @@ public class Main {
     // Llamada al API de themoviedb para obtener peliculas populares
     public static final String API_URL_GET_POPULARES = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<KEY>&language=<LANG>";
 
+    // Llamada al API de themoviedb para obtener peliculas infantiles
+    public static final String API_URL_GET_INFANTILES = "http://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=<KEY>&language=<LANG>";
+
     // Llamada al API de themoviedb para obtener próximos lanzamientos
     public static final String API_URL_GET_UPCOMING = "http://api.themoviedb.org/3/discover/movie?api_key=<KEY>&language=<LANG>&primary_release_date.gte=2017-5-29&sort_by=popularity.desc";
 
@@ -45,6 +48,7 @@ public class Main {
 
     // Array con el listado de películas a mostrar
     public static ArrayList<Movies> listaPopulares = new ArrayList<>();
+    public static ArrayList<Movies> listaInfantiles = new ArrayList<>();
     public static ArrayList<Movies> listaUpcoming = new ArrayList<>();
     public static ArrayList<Movies> listaBuscador = new ArrayList<>();
 

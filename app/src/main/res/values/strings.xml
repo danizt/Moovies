@@ -76,5 +76,6 @@
     <string name="e_email_formato">E: El email no tiene un formato correcto</string>
     <string name="e_obtener_datos">E: Error al obtener los datos</string>
     <string name="e_buscar">E: No se ha encontado ningún resultado</string>
+    <string name="infantiles">Infantiles</string>
 
 </resources>

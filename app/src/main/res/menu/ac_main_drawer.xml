@@ -7,6 +7,10 @@
             android:icon="@drawable/ic_whatshot_black_24dp"
             android:title="@string/populares" />
         <item
+            android:id="@+id/nav_infantiles"
+            android:icon="@drawable/ic_child_friendly_black_24dp"
+            android:title="@string/infantiles" />
+        <item
             android:id="@+id/nav_upcoming"
             android:icon="@drawable/ic_update_black_24dp"
             android:title="@string/upcoming" />

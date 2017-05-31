@@ -20,6 +20,7 @@ import com.acev.moovies.Fragments.FrAleatoria;
 import com.acev.moovies.Fragments.FrBuscador;
 import com.acev.moovies.Fragments.FrContacto;
 import com.acev.moovies.Fragments.FrDonar;
+import com.acev.moovies.Fragments.FrInfantiles;
 import com.acev.moovies.Fragments.FrPopulares;
 import com.acev.moovies.Fragments.FrUpcoming;
 import com.acev.moovies.R;
@@ -107,6 +108,9 @@ public class AcMain extends AppCompatActivity
 
         if (id == R.id.nav_populares) {
             cambiarFragment(new FrPopulares());
+        }
+        else if (id == R.id.nav_infantiles) {
+            cambiarFragment(new FrInfantiles());
         }
         else if (id == R.id.nav_upcoming) {
             cambiarFragment(new FrUpcoming());
