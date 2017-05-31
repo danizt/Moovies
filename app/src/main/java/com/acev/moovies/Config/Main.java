@@ -69,6 +69,9 @@ public class Main {
     // Path para enlace a PlayStore
     public static final String URL_PLAYSTORE = "https://play.google.com/store/apps/details?id=<PAQUETE>";
 
+    // Enlace a PayPal
+    public static final String PAYPAL = SecretConfig.PAYPAL;
+
 
     // TAGs listado de películas
     public static final String TAG_ID = "id";

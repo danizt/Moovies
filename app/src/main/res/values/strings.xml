@@ -52,6 +52,7 @@
     <string name="buscar">Buscar</string>
     <string name="developed_by">Desarrollado por </string>
     <string name="share_message">Echa un vistazo a esta herramienta para consultar cualquier película.</string>
+    <string name="donar_text">¿Te gusta esta aplicación? ¿Realmente es útil? ¡Invita al desarrollador a un café!</string>
 
     <!-- Opciones de los dialog -->
     <string name="yes">Sí</string>

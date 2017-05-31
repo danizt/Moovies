@@ -22,10 +22,10 @@
 
     <item android:title="@string/comunicacion">
         <menu>
-            <!--<item-->
-                <!--android:id="@+id/nav_donar"-->
-                <!--android:icon="@drawable/ic_favorite_border_black_24dp"-->
-                <!--android:title="@string/donar" />-->
+            <item
+                android:id="@+id/nav_donar"
+                android:icon="@drawable/ic_favorite_border_black_24dp"
+                android:title="@string/donar" />
             <item
                 android:id="@+id/nav_compartir"
                 android:icon="@drawable/ic_share_black_24dp"

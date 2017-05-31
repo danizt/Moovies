@@ -19,6 +19,7 @@ import com.acev.moovies.Fragments.FrAbout;
 import com.acev.moovies.Fragments.FrAleatoria;
 import com.acev.moovies.Fragments.FrBuscador;
 import com.acev.moovies.Fragments.FrContacto;
+import com.acev.moovies.Fragments.FrDonar;
 import com.acev.moovies.Fragments.FrPopulares;
 import com.acev.moovies.Fragments.FrUpcoming;
 import com.acev.moovies.R;
@@ -129,9 +130,9 @@ public class AcMain extends AppCompatActivity
         else if (id == R.id.nav_about) {
             new FrAbout().show(getSupportFragmentManager(), "About");
         }
-//        else if (id == R.id.nav_donar) {
-//            Snackbar.make(findViewById(android.R.id.content), "En construcción (donar)", Snackbar.LENGTH_LONG).show();
-//        }
+        else if (id == R.id.nav_donar) {
+            new FrDonar().show(getSupportFragmentManager(), "Donar");
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
