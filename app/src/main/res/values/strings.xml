@@ -16,7 +16,7 @@
 
     <!-- Títulos de la Toolbar y del drawer -->
     <string name="inicio">Inicio</string>
-    <string name="title_activity_ac_main">AcMain</string>
+    <string name="title_activity_ac_main" translatable="false">AcMain</string>
     <string name="populares">Populares</string>
     <string name="infantiles">Infantiles</string>
     <string name="upcoming">Próximamente</string>
