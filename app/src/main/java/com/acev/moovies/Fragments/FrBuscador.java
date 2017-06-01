@@ -1,6 +1,7 @@
 package com.acev.moovies.Fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -64,6 +66,8 @@ public class FrBuscador extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Log.d("FrBuscador", "<QUERY> = "+query);
+                final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
                 obtenerDatos(query);
                 return true;
             }
@@ -110,5 +114,7 @@ public class FrBuscador extends Fragment {
                 sbError.dismiss();
             }
         }
+        final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
     }
 }
