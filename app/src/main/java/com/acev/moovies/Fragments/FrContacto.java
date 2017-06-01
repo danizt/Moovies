@@ -20,7 +20,7 @@ import com.acev.moovies.Tasks.TaskSendText;
 import static com.acev.moovies.Config.Main.CONTACT_TEXT;
 
 /**
- * Created by Dani on 08/05/2017.
+ * Created by Daniel on 08/05/2017.
  */
 
 public class FrContacto extends DialogFragment {

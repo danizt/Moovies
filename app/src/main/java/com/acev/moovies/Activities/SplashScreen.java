@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.acev.moovies.R;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.crash.FirebaseCrash;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -18,7 +16,7 @@ import java.util.TimerTask;
 import static com.acev.moovies.Config.Main.SPLASH_SCREEN_DELAY;
 
 /**
- * Created by Dani on 04/05/2017.
+ * Created by Daniel on 04/05/2017.
  */
 
 public class SplashScreen extends Activity {
@@ -33,11 +31,6 @@ public class SplashScreen extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         // Asignar layout a la actividad
         setContentView(R.layout.activity_splash_screen);
-
-
-        FirebaseCrash.log("Activity created");
-
-
 
         // Tarea que iniciará la siguiente actuvidad
         TimerTask task = new TimerTask() {

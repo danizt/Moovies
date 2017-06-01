@@ -18,6 +18,7 @@
     <string name="inicio">Inicio</string>
     <string name="title_activity_ac_main">AcMain</string>
     <string name="populares">Populares</string>
+    <string name="infantiles">Infantiles</string>
     <string name="upcoming">Próximamente</string>
     <string name="buscador">Buscador</string>
     <string name="detalle">Detalle</string>
@@ -76,6 +77,5 @@
     <string name="e_email_formato">E: El email no tiene un formato correcto</string>
     <string name="e_obtener_datos">E: Error al obtener los datos</string>
     <string name="e_buscar">E: No se ha encontado ningún resultado</string>
-    <string name="infantiles">Infantiles</string>
 
 </resources>

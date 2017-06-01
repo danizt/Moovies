@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import com.acev.moovies.R;
 
-import org.w3c.dom.Text;
-
 import static com.acev.moovies.Config.Main.GITHUB_USER;
 import static com.acev.moovies.Config.Main.LINKEDIN_USER;
 import static com.acev.moovies.Config.Main.URL_GITHUB;
@@ -24,7 +22,7 @@ import static com.acev.moovies.Config.Main.URL_PLAYSTORE;
 import static com.acev.moovies.Config.Main.URL_TMDB;
 
 /**
- * Created by Usuario on 29/05/2017.
+ * Created by Daniel on 29/05/2017.
  */
 
 public class FrAbout extends DialogFragment {

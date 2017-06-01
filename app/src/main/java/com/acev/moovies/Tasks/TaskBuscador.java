@@ -11,9 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Locale;
 
 import okhttp3.OkHttpClient;
@@ -22,7 +20,6 @@ import okhttp3.Response;
 
 import static com.acev.moovies.Config.Main.API_KEY;
 import static com.acev.moovies.Config.Main.API_URL_GET_SEARCH;
-import static com.acev.moovies.Config.Main.API_URL_GET_UPCOMING;
 import static com.acev.moovies.Config.Main.TAG_AVERAGE;
 import static com.acev.moovies.Config.Main.TAG_BACKDROP;
 import static com.acev.moovies.Config.Main.TAG_ID;

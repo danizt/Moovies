@@ -14,10 +14,8 @@ import android.widget.ListView;
 import com.acev.moovies.Adapters.AdaptadorLista;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskInfantiles;
-import com.acev.moovies.Tasks.TaskPopulares;
 
 import static com.acev.moovies.Config.Main.listaInfantiles;
-import static com.acev.moovies.Config.Main.listaPopulares;
 
 /**
  * Created by Daniel on 05/05/2017.

@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.design.widget.NavigationView;
@@ -16,7 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.acev.moovies.Fragments.FrAbout;
-import com.acev.moovies.Fragments.FrAleatoria;
 import com.acev.moovies.Fragments.FrBuscador;
 import com.acev.moovies.Fragments.FrContacto;
 import com.acev.moovies.Fragments.FrDonar;
@@ -29,6 +27,9 @@ import com.sylversky.fontreplacer.Replacer;
 
 import static com.acev.moovies.Config.Main.URL_PLAYSTORE;
 
+/**
+ * Created by Daniel on 04/05/2017.
+ */
 
 public class AcMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -59,7 +60,6 @@ public class AcMain extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         // Mostrar colores originales de los iconos del menú lateral
         navigationView.setItemIconTintList(null);
-
 
         // Seleccionar como contenido "Populares"
         navigationView.getMenu().getItem(0).setChecked(true);
@@ -115,12 +115,11 @@ public class AcMain extends AppCompatActivity
         else if (id == R.id.nav_upcoming) {
             cambiarFragment(new FrUpcoming());
         }
-//        else if (id == R.id.nav_aleatoria) {
-//            Snackbar.make(findViewById(android.R.id.content), "En construcción (aleatoria)", Snackbar.LENGTH_LONG).show();
-//            cambiarFragment(new FrAleatoria());
-//        }
         else if (id == R.id.nav_buscador) {
             cambiarFragment( new FrBuscador());
+        }
+        else if (id == R.id.nav_donar) {
+            new FrDonar().show(getSupportFragmentManager(), "Donar");
         }
         else if (id == R.id.nav_compartir) {
             compartir();
@@ -133,9 +132,6 @@ public class AcMain extends AppCompatActivity
         }
         else if (id == R.id.nav_about) {
             new FrAbout().show(getSupportFragmentManager(), "About");
-        }
-        else if (id == R.id.nav_donar) {
-            new FrDonar().show(getSupportFragmentManager(), "Donar");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -20,7 +20,6 @@ import okhttp3.Response;
 
 import static com.acev.moovies.Config.Main.API_KEY;
 import static com.acev.moovies.Config.Main.API_URL_GET_INFANTILES;
-import static com.acev.moovies.Config.Main.API_URL_GET_POPULARES;
 import static com.acev.moovies.Config.Main.TAG_AVERAGE;
 import static com.acev.moovies.Config.Main.TAG_BACKDROP;
 import static com.acev.moovies.Config.Main.TAG_ID;
@@ -28,7 +27,6 @@ import static com.acev.moovies.Config.Main.TAG_POSTER;
 import static com.acev.moovies.Config.Main.TAG_RELEASE_DATE;
 import static com.acev.moovies.Config.Main.TAG_TITLE;
 import static com.acev.moovies.Config.Main.listaInfantiles;
-import static com.acev.moovies.Config.Main.listaPopulares;
 
 /**
  * Created by Daniel on 14/05/2017.
