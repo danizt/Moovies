@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.acev.moovies.Objects.Detalle;
 import com.acev.moovies.R;
 import com.acev.moovies.Tasks.TaskDetalles;
+import com.acev.moovies.Tasks.TaskDetallesEn;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
@@ -27,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
 import static com.acev.moovies.Config.Main.API_POSTER_URL;
 import static com.acev.moovies.Config.Main.URL_YT_EMBED;
 
@@ -84,6 +88,43 @@ public class FrDetalle extends Fragment {
                     pDialog.dismiss();
                 }
                 if (sem) {
+                    if (det.getOverview().equals("null")) {
+                        Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                getResources().getString(R.string.e_trad),
+                                Snackbar.LENGTH_LONG).show();
+                        Log.e(TAG, "Traducción no encontrada");
+                        obtenerDatos2();
+                    } else {
+                        crearVista();
+                    }
+                } else {
+                    sbError.show();
+                }
+            }
+        }.execute();
+    }
+
+    public void obtenerDatos2() {
+        sbError = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                getResources().getString(R.string.e_obtener_datos),
+                Snackbar.LENGTH_INDEFINITE)
+                .setAction(R.string.reintentar, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        obtenerDatos();
+                    }
+                });
+        if (sbError.isShown()) {
+            sbError.dismiss();
+        }
+        new TaskDetallesEn(getActivity(), id_detalle) {
+            @Override
+            protected void onPostExecute(Boolean sem) {
+                super.onPostExecute(sem);
+                if (pDialog.isShowing()) {
+                    pDialog.dismiss();
+                }
+                if (sem) {
                     crearVista();
                 } else {
                     sbError.show();
@@ -111,7 +152,7 @@ public class FrDetalle extends Fragment {
 
         // Titulo Original
 
-        if (!det.getTagline().equals("")) {
+        if (!det.getTagline().equals("") || det.getTagline().equals("null")) {
             TextView tvTagline = (TextView) getView().findViewById(R.id.tvdtTagline);
             tvTagline.setText("\"" + det.getTagline() + "\"");
         } else {
