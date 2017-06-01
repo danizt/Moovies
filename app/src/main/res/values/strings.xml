@@ -1,15 +1,15 @@
 <resources>
     <!-- Nombre del desarrollador -->
-    <string name="developer_name">Daniel Zarzoso</string>
+    <string name="developer_name" translatable="false">Daniel Zarzoso</string>
 
     <!-- Título de la aplicación -->
-    <string name="app_name">Moovies</string>
+    <string name="app_name" translatable="false">Moovies</string>
 
     <!-- Slogan de la aplicación -->
     <string name="app_slogan">Consulta tus películas favoritas</string>
 
     <!-- Etiqueta de ayuda -->
-    <string name="blank">-</string>
+    <string name="blank" translatable="false">-</string>
 
     <!-- C&P TMDb -->
     <string name="TMDb">Este producto utiliza el API TMDb pero no está respaldada ni certificada por TMDb.</string>
@@ -27,7 +27,7 @@
     <string name="contactar">Contactar</string>
     <string name="valorar">Valorar</string>
     <string name="about">Acerca de</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ajustes</string>
     <string name="donar">Donar</string>
     <string name="share">Compartir</string>
     <string name="aleatoria">Aleatoria</string>
