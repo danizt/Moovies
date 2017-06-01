@@ -233,13 +233,13 @@
                             android:layout_alignBottom="@+id/tvdtProd"
                             android:layout_alignLeft="@+id/tvGenre"
                             android:layout_alignStart="@+id/tvGenre"
-                            android:layout_toLeftOf="@+id/tvdtOriginalT"
-                            android:layout_toStartOf="@+id/tvdtOriginalT"
                             android:gravity="center"
+                            android:maxWidth="112dp"
+                            android:minHeight="24dp"
                             android:text="@string/production"
+                            android:textAlignment="textStart"
                             android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:minHeight="24dp"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvdtProd"
