@@ -35,7 +35,7 @@ public class Main {
     public static final String API_URL_GET_INFANTILES = "http://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=<KEY>&language=<LANG>";
 
     // Llamada al API de themoviedb para obtener próximos lanzamientos
-    public static final String API_URL_GET_UPCOMING = "http://api.themoviedb.org/3/discover/movie?api_key=<KEY>&language=<LANG>&primary_release_date.gte=2017-5-29&sort_by=popularity.desc";
+    public static final String API_URL_GET_UPCOMING = "http://api.themoviedb.org/3/discover/movie?api_key=<KEY>&language=<LANG>&primary_release_date.gte=<DATE>&sort_by=popularity.desc";
 
     // Llamada al API de themoviedb para obtener detalles de una palícula
     public static final String API_URL_GET_DETALLES = "http://api.themoviedb.org/3/movie/<ID>?append_to_response=videos&api_key=<KEY>&language=<LANG>";

@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 import okhttp3.OkHttpClient;
@@ -52,11 +53,12 @@ public class TaskUpcoming extends AsyncTask<Void, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
-        Calendar c1 = Calendar.getInstance();
+        Date c1 = new Date();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-        String date = format1.format(c1.getTime());
+        String fecha = format1.format(c1);
 
-        String url = API_URL_GET_UPCOMING.replace("<KEY>", API_KEY).replace("<LANG>", Locale.getDefault().getLanguage().replace("<DATE>", date));
+        String url = API_URL_GET_UPCOMING.replace("<KEY>", API_KEY).replace("<LANG>", Locale.getDefault().getLanguage()).replace("<DATE>", fecha);
+
 
         Request request = new Request.Builder()
                 .url(url)
