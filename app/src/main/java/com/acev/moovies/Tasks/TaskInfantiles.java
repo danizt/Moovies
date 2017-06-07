@@ -74,8 +74,8 @@ public class TaskInfantiles extends AsyncTask<Void, Integer, Boolean> {
 
     private ArrayList<Movies> obtenerListado(JSONArray JSONarray) {
         ArrayList<Movies> array = new ArrayList<>();
-//        for (int i = 0; i < JSONarray.length(); i++) {
-        for (int i = 0; i < 18; i++) {
+        for (int i = 0; i < JSONarray.length(); i++) {
+//        for (int i = 0; i < 18; i++) {
             try {
 
                 String titulo = JSONarray.getJSONObject(i).getString(TAG_TITLE);
@@ -92,7 +92,10 @@ public class TaskInfantiles extends AsyncTask<Void, Integer, Boolean> {
                 pelicula.setBackdrop(backdrop);
                 pelicula.setPoster(poster);
                 pelicula.setRelease_date(salida);
-                array.add(pelicula);
+
+                if (!(titulo.contains("Nymphomaniac") || titulo.contains("Una odisea en el espacio"))){
+                    array.add(pelicula);
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
